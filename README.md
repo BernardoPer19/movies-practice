@@ -35,15 +35,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
-
-
 ✅ Lista de Tareas SUUUPER completa para tu Wiki de Películas (Next.js)
 🟢 Etapa 1 – Base React + Next
 
-[] Crear proyecto Next.js con TailwindCSS.
-[] Página Home con buscador y lista de películas populares (API fetch).
-[] Componente MovieCard con título, poster, año.
+[x] Crear proyecto Next.js con TailwindCSS.
+[x] Página Home con buscador y lista de películas populares (API fetch).
+[x] Componente MovieCard con título, poster, año.
 [] Input controlado para búsqueda.
 [] Loading spinner y mensajes de error.
 []Paginación (siguiente/anterior).
