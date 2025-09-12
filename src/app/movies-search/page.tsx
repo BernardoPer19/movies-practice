@@ -1,24 +1,31 @@
 "use client";
-import MovieSearchList from "@/components/movie-search/MovieSearchList";
-import Search from "@/components/Search";
-import SearchContextProvider from "@/context/SearchContext";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import React from "react";
 
-const MovieSeachPage = () => {
-  const queryClient = new QueryClient();
+import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Search from "@/components/Search";
+import MovieSearchList from "@/components/movie-search/MovieSearchList";
+
+const queryClient = new QueryClient();
+
+export default function MovieSearchPage() {
+  const [query, setQuery] = useState("heros");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
+
   return (
-    <main className=" w-[1280px] m-auto">
-      <SearchContextProvider>
-        <QueryClientProvider client={queryClient}>
-          <>
-            <Search />
-            <MovieSearchList />
-          </>
-        </QueryClientProvider>
-      </SearchContextProvider>
+    <main className="max-w-6xl mx-auto px-4">
+      <QueryClientProvider client={queryClient}>
+        <Search
+          value={searchTerm}
+          onChange={setSearchTerm}
+          setQuery={setQuery}
+        />
+        <MovieSearchList
+          searchTerm={query}
+          page={page}
+          onPageChange={setPage}
+        />
+      </QueryClientProvider>
     </main>
   );
-};
-
-export default MovieSeachPage;
+}

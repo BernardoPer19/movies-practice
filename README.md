@@ -41,9 +41,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 [x] Crear proyecto Next.js con TailwindCSS.
 [x] Página Home con buscador y lista de películas populares (API fetch).
 [x] Componente MovieCard con título, poster, año.
-[] Input controlado para búsqueda.
-[] Loading spinner y mensajes de error.
-[]Paginación (siguiente/anterior).
+[x] Input controlado para búsqueda.
+[x] Loading spinner y mensajes de error.
+[x]Paginación (siguiente/anterior).
 
 🟡 Etapa 2 – Nivel Intermedio
 

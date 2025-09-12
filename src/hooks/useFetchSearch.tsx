@@ -1,12 +1,12 @@
-"use client"
+"use client";
 import { getMoviesSearch } from "@/service/movies";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 
 export const useFetchSearch = (page: number, currentMovie: string) => {
-  const getSearchMovies = useQuery({
-    queryKey: ["moviesKey"],
+  return useQuery({
+    queryKey: ["movies", currentMovie, page],
     queryFn: () => getMoviesSearch(page, currentMovie),
+    placeholderData: keepPreviousData, 
+    staleTime: 1000 * 60 * 5,
   });
-
-  return {getSearchMovies}
 };
