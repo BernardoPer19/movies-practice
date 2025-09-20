@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Search from "@/components/Search";
-import MovieSearchList from "@/components/movie-search/MovieSearchList";
+import Search from '@/components/Search';
+import MovieSearchList from '@/components/movie-search/MovieSearchList';
+
 
 const queryClient = new QueryClient();
 
 export default function MovieSearchPage() {
-  const [query, setQuery] = useState("heros");
+  const [query, setQuery] = useState("batman");
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
 

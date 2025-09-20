@@ -3,11 +3,11 @@ import { useFetchSearch } from "@/hooks/useFetchSearch";
 import React from "react";
 
 const MovieSearchList = () => {
-  const { getSearchMovies } = useFetchSearch(1, "attack on titan");
+  const { data } = useFetchSearch(1, "attack on titan");
 
   return (
     <div>
-      {getSearchMovies.data?.results.map((mov) => (
+      {data?.results.map((mov) => (
         <div key={mov.id}>
           <p>{mov.title}</p>
         </div>

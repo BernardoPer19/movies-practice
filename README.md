@@ -47,24 +47,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 🟡 Etapa 2 – Nivel Intermedio
 
-[] Página dinámica /movie/[id] con detalle (sinopsis, rating, género).
+[x] Página dinámica /movie/[id] con detalle (sinopsis, rating, género).
 [] Modal (Portal) para ver detalle sin salir de la lista.
-[] Guardar favoritos en localStorage.
+[x] Guardar favoritos en localStorage.
 [] Página /favorites que muestra solo las guardadas.
-[] Custom hook useMovies(query, page) para separar lógica de fetch.
-[] Estado global con Context para manejar favoritos.
+[x] Custom hook useMovies(query, page) para separar lógica de fetch.
+[x] Estado global con Context para manejar favoritos.
 [] Añadir filtros: por género, año, rating.
 
 🔵 Etapa 3 – Next.js Pro
 
-[] Optimizar imágenes con next/image.
+[x] Optimizar imágenes con next/image.
 [] Metadata dinámica: cada película con su título en SEO.
-[] Layout general con Header/Footer.
-[] Layout anidado para /movie/[id].
+[x] Layout general con Header/Footer.
+[x] Layout anidado para /movie/[id].
 [] loading.tsx y error.tsx para feedback de UI.
 [] API Route /api/movies como proxy seguro a la API externa.
 [] SSR para películas populares (carga inicial más rápida).
-[] CSR para búsqueda (con estado del cliente).
+[x] CSR para búsqueda (con estado del cliente).
 
 🟣 Etapa 4 – Features Avanzadas
 

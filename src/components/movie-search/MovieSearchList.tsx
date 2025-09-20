@@ -1,4 +1,3 @@
-"use client";
 
 import { useFetchSearch } from "@/hooks/useFetchSearch";
 import Link from "next/link";
@@ -24,7 +23,7 @@ export default function MovieSearchList({
         {data?.results?.map((mov: any) => (
           <div className="w-64 cursor-pointer" key={mov.id}>
             {mov.overview !== "" ? (
-              <Link href={`/movie/${mov.id}`}>
+              <Link href={`/movies-search/${mov.id}`}>
                 <Image
                   className="w-fit rounded shadow-lg hover:scale-105 transition-transform"
                   src={`https://image.tmdb.org/t/p/w500${

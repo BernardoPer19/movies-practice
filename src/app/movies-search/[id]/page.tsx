@@ -1,15 +1,18 @@
 import { getMoviesSearchByID } from "@/service/movies";
 import React from "react";
 import { ResultMovies } from "@/types/interfaces/movies";
+import FavoriteButton from "@/components/ui/FavoriteButton";
+import Image from "next/image";
+// import FavoriteButton from '@/components/movie-search/FavoriteButton';
 
 interface Props {
-  params: Promise<{ id: number }>;
+  params: Promise<{ id: string }>;
 }
 
 const MoviePage = async ({ params }: Props) => {
   try {
     const { id } = await params; // conservamos la promesa
-    const movie: ResultMovies = await getMoviesSearchByID(id);
+    const movie: ResultMovies = await getMoviesSearchByID(Number(id));
 
     if (process.env.NODE_ENV === "development") {
       console.log("Movie fetched:", movie);
@@ -29,11 +32,13 @@ const MoviePage = async ({ params }: Props) => {
           {/* Poster */}
           {movie.poster_path && (
             <div className="md:w-1/3 flex justify-center items-start">
-              <img
+              <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
                 className="rounded-xl shadow-2xl transform transition duration-500 hover:scale-105"
                 loading="lazy"
+                width={380}
+                height={380}
               />
             </div>
           )}
@@ -64,6 +69,10 @@ const MoviePage = async ({ params }: Props) => {
                   Popularidad: {Math.round(movie.popularity)}
                 </span>
               )}
+
+              <span>
+                <FavoriteButton movie={movie} />
+              </span>
             </div>
 
             {movie.genre_ids && movie.genre_ids.length > 0 && (
